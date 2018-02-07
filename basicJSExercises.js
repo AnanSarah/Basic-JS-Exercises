@@ -171,7 +171,18 @@ c occurs 5 times
  --------------------------- */
 
 function most_frequent(arr) {
-  console.log("Most frequently occuring item in arr");
+  var count = 0;
+  var maxCount = 0;
+  var mostFreq;
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      if(arr[i]==arr[j]){
+        count++;
+      }
+      if(count>maxCount){maxCount=count; mostFreq = arr[i];}
+    }
+  }
+  console.log(mostFreq);
 }
 
 console.log("Most Frequent Item:");
@@ -193,13 +204,26 @@ Output:
  --------------------------- */
 
 function remove_duplicates(arr) {
-  console.log("Duplicates removed from array");
+ var newArr=[];
+ for (var i = 0; i < arr.length; i++) {
+   var found=0;
+    for (var j = 0; j < newArr.length; j++) {
+      if(arr[i]==newArr[j]){
+        found=1;
+        break;
+        }
+      }
+      if(found == 0){
+        newArr.push(arr[i]);
+    }
+ }
+console.log(newArr);
 }
-
 console.log("Remove Duplicate Values:");
 /* Uncomment the following to check */
-  // remove_duplicates([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]);
-  // remove_duplicates([4, 4, 4, 5, 's', 8, 's']);
+  remove_duplicates([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]);
+  remove_duplicates([4, 4, 4, 5, 's', 8, 's']);
+  remove_duplicates(['a','a', 'b']);
 
 
 /* ---------------------------
