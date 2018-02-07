@@ -261,12 +261,17 @@ HINT: Use Math.ceil() and Math.random()
  --------------------------- */
 
 function guessing_game(guess) {
-  // Get a random integer from 1 to 10 inclusive
-  console.log("matched or unmatched?");
+    guess1=Math.floor(Math.random() * 10) + 1;
+    if (guess==guess1){
+        console.log("matched");
+    }
+    else{
+      console.log("unmatched");
+    }
 }
 
 console.log("Guessing Game:");
 /* Uncomment the following to check */
-  // var guess = prompt('Guess the number between 1 and 10 inclusive');
-  // console.log("User guessed: "+ guess);
-  // guessing_game(guess);
+   var guess = prompt('Guess the number between 1 and 10 inclusive');
+   console.log("User guessed: "+ guess);
+   guessing_game(guess);
