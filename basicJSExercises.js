@@ -11,9 +11,7 @@ Output:
  --------------------------- */
 
 function percentage(number, percentage) {
-  var x=number;
-  var y=percentage;
-  var z= (number*percentage)/100;
+    var z= (number*percentage)/100;
   return z;
 }
 console.log("Percentage Calculator:");
@@ -36,9 +34,7 @@ Output:
  --------------------------- */
 
  function areaTriangle(base, height) {
-   var b=base;
-   var h=height;
-   var area= 0.5*b*h;
+   var area= 0.5*base*height;
    return area;
  }
  console.log("Triangle Area Calculator:");
@@ -67,16 +63,17 @@ HINT: Use substring()
  --------------------------- */
 
 function rotate_string(text) {
-console.log(text);
-for (var i = 0; i < text.length; i++) {
-  text = text[text.length-1]+ text.substring(0, text.length-1);
   console.log(text);
+  for (var i = 0; i < text.length; i++) {
+    text = text[text.length-1]+ text.substring(0, text.length-1);
+    console.log(text);
+  }
 }
 
 console.log("Rotate String:");
 /* Uncomment the following to check */
 rotate_string("cat");
-rotate_string("pseudonym")
+rotate_string("Nemophilist");
 
 
 /* ---------------------------
@@ -94,14 +91,18 @@ HINT: Use split() and substring()
  --------------------------- */
 
 function protect_email(email) {
-  return "protected email";
+  var s= email.split("@");
+  var user= s[0];
+  Emailuser= user.length/2;
+  email= user.substring(0,user.length-Emailuser);
+  return email+"...@"+s[1];
 }
 
 console.log("Protected email:");
 /* Uncomment the following to check */
-  //console.log(protect_email("harry_potter@gmail.com"));
-  //console.log(protect_email("sarah.connor@gmail.com"));
-
+  console.log(protect_email("harry_potter@gmail.com"));
+  console.log(protect_email("sarah.connor@gmail.com"));
+  console.log(protect_email("anansarahnikita27@gmail.com"))
 
 /* ---------------------------
 *** #5 Remove First Occurence ***
@@ -118,13 +119,15 @@ HINT: Use indexOf() and slice()
  --------------------------- */
 
 function remove_first_occurrence(text, searchstring) {
-  return "edited text";
+  var n = text.indexOf(searchstring);
+  return text.slice(0,n-1)+text.slice ( n +searchstring.length, text.length);
 }
 
 console.log("Remove First Occurrence:");
 /* Uncomment the following to check */
-  //console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
-  //console.log(remove_first_occurrence("Drastic times call for drastic measures", 'drastic'));
+
+  console.log(remove_first_occurrence("The quick brown fox jumps over the lazy dog", 'the'));
+  console.log(remove_first_occurrence("Drastic times call for drastic measures", 'drastic'));
 
 
 /* ---------------------------
